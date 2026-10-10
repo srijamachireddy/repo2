@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3ff">
+  <title>A Little Birthday Surprise</title>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-wash" aria-hidden="true"></div>
+  <main class="app-shell">
+    <div class="top-note"><span>✦</span> made with a little extra love <span>✦</span></div>
+
+    <section class="screen active" id="passcode-screen" aria-labelledby="passcode-title">
+      <div class="passcode-layout">
+        <div class="memory-side">
+          <div class="tiny-label">a tiny surprise, just for you</div>
+          <h1 id="passcode-title">Unlock for<br><span>surprise</span></h1>
+          <div class="memory-photos">
+            <figure class="photo-frame couple-photo">
+              <img src="images/couple1.jpg" alt="A favorite photo of us together">
+              <span class="photo-fallback" aria-hidden="true">♡</span>
+              <figcaption>my favorite person</figcaption>
+            </figure>
+            <figure class="photo-frame cat-photo">
+              <span class="photo-fallback cat-fallback" aria-hidden="true">😹</span>
+              <figcaption>very serious security</figcaption>
+            </figure>
+            <span class="floaty floaty-one" aria-hidden="true">✿</span>
+            <span class="floaty floaty-two" aria-hidden="true">♡</span>
+          </div>
+        </div>
+        <div class="passcode-card soft-card">
+          <div class="card-sparkle" aria-hidden="true">✦</div>
+          <p class="eyebrow">THE SECRET DOOR</p>
+          <h2>Enter passcode</h2>
+          <p class="muted">A little hint: it’s four very special numbers.</p>
+          <div class="pin-dots" aria-label="Passcode, 4 digits">
+            <span class="pin-dot"></span><span class="pin-dot"></span>
+            <span class="pin-dot"></span><span class="pin-dot"></span>
+          </div>
+          <input id="passcode-input" class="visually-hidden" type="tel" inputmode="numeric" maxlength="4" aria-label="Enter 4-digit passcode" autocomplete="off">
+          <p id="passcode-message" class="form-message" aria-live="polite"> </p>
+          <div class="keypad" aria-label="Numeric keypad">
+            <button type="button" data-key="1"><span>1</span></button>
+            <button type="button" data-key="2"><span>2</span></button>
+            <button type="button" data-key="3"><span>3</span></button>
+            <button type="button" data-key="4"><span>4</span></button>
+            <button type="button" data-key="5"><span>5</span></button>
+            <button type="button" data-key="6"><span>6</span></button>
+            <button type="button" data-key="7"><span>7</span></button>
+            <button type="button" data-key="8"><span>8</span></button>
+            <button type="button" data-key="9"><span>9</span></button>
+            <button type="button" data-key="*" aria-label="Delete last digit"><span>*</span></button>
+            <button type="button" data-key="0"><span>0</span></button>
+            <button type="button" data-key="#" aria-label="Clear passcode"><span>#</span></button>
+          </div>
+          <p class="key-hint">* to undo <span>·</span> # to start over</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="question-screen" aria-labelledby="question-title" hidden>
+      <div class="question-card soft-card">
+        <span class="sticker sticker-star" aria-hidden="true">✦</span>
+        <span class="sticker sticker-heart" aria-hidden="true">♡</span>
+        <div class="cat-bubble" role="img" aria-label="A cute cat with a party hat">
+          <span class="party-hat" aria-hidden="true">▲</span><span aria-hidden="true">🐱</span>
+          <span class="cat-cheek">·</span>
+        </div>
+        <p class="eyebrow">PSSST... YOU!</p>
+        <h2 id="question-title">I have a little surprise<br>for you. Wanna see it?</h2>
+        <p class="muted">It’s small, sparkly, and made with love.</p>
+        <div class="choice-row">
+          <button type="button" class="button button-primary" id="yes-button">YES, PLEASE! <span>♡</span></button>
+          <button type="button" class="button button-quiet" id="no-button">NO</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="birthday-screen" aria-labelledby="birthday-title" hidden>
+      <div class="birthday-scene">
+        <div class="confetti confetti-one" aria-hidden="true">✦</div>
+        <div class="confetti confetti-two" aria-hidden="true">✿</div>
+        <div class="confetti confetti-three" aria-hidden="true">♡</div>
+        <div class="balloon balloon-pink" aria-hidden="true"></div>
+        <div class="balloon balloon-yellow" aria-hidden="true"></div>
+        <div class="balloon balloon-purple" aria-hidden="true"></div>
+        <div class="birthday-heading">
+          <p class="eyebrow">TODAY IS ALL ABOUT YOU</p>
+          <h2 id="birthday-title">HAPPY <span>BIRTHDAY!</span></h2>
+          <p class="birthday-name">Adi <span aria-hidden="true">♡</span></p>
+          <p class="muted">More joy, more cake, more reasons to smile.</p>
+        </div>
+        <div class="birthday-display">
+          <div class="party-hat-frame photo-frame">
+            <span class="hat-doodle" aria-hidden="true">✦</span>
+            <img src="images/couple2.jpg" alt="A happy birthday photo of us">
+            <span class="photo-fallback" aria-hidden="true">♡</span>
+            <span class="frame-caption">my favorite celebration</span>
+          </div>
+          <div class="disco-ball" role="img" aria-label="A glittering disco ball"><span>✦</span></div>
+          <div class="birthday-wish">you make<br>every day<br><em>brighter</em> ✧</div>
+        </div>
+        <button type="button" class="button button-primary next-button" data-next="candle-screen">next <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="candle-screen" aria-labelledby="candle-title" hidden>
+      <div class="candle-card soft-card wish-card">
+        <div class="wish-heading">
+          <p class="eyebrow"><span aria-hidden="true">✦</span> A MOMENT JUST FOR YOU, ADI <span aria-hidden="true">✦</span></p>
+          <h2 id="candle-title">Blow and make a wish</h2>
+          <p class="muted">Close your eyes, make it magical, then tap the flame.</p>
+        </div>
+        <div class="cake-scene">
+          <div class="cake-halo" aria-hidden="true"></div>
+          <div class="cake-cracker" id="cake-cracker" aria-hidden="true" hidden>
+            <span class="cracker-confetti confetti-a">✦</span>
+            <span class="cracker-confetti confetti-b">✿</span>
+            <span class="cracker-confetti confetti-c">♡</span>
+            <span class="cracker-confetti confetti-d">●</span>
+            <span class="cracker-confetti confetti-e">✦</span>
+            <span class="cracker-cone"><span class="cracker-stripe"></span></span>
+          </div>
+          <div class="blow-puffs" id="blow-puffs" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="cake-sparkle sparkle-a" aria-hidden="true">✧</div>
+          <div class="cake-sparkle sparkle-b" aria-hidden="true">✦</div>
+          <div class="cake-sparkle sparkle-c" aria-hidden="true">✧</div>
+          <div class="party-cat-side" role="img" aria-label="A party cat cheering you on"><span>🎉</span><b>🐱</b></div>
+          <div class="cake">
+            <div class="candle">
+              <button type="button" id="flame-button" class="flame" aria-label="Blow out the candle"></button>
+              <span class="wick"></span>
+              <span class="candle-stick"></span>
+            </div>
+            <div class="cake-top"><span>♡</span><span>✿</span><span>♡</span></div>
+            <div class="cake-layer layer-top"></div>
+            <div class="cake-layer layer-bottom"></div>
+            <div class="cake-plate"></div>
+          </div>
+        </div>
+        <p id="wish-message" class="wish-message" aria-live="polite"><span class="wish-heart" aria-hidden="true">♡</span> Make a wish as lovely as you are <span class="wish-heart" aria-hidden="true">♡</span></p>
+        <button type="button" class="button button-primary next-button wish-next" id="candle-next" data-next="gifts-screen" hidden>continue the magic <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="gifts-screen" aria-labelledby="gifts-title" hidden>
+      <div class="gifts-card soft-card">
+        <p class="eyebrow">PICK YOUR LITTLE SURPRISE</p>
+        <h2 id="gifts-title">Select any gift</h2>
+        <p class="muted">Three tiny boxes, three big bits of love.</p>
+        <div class="gift-row">
+          <button type="button" class="gift-choice" data-gift="letter-screen" aria-label="Open gift one, a love letter">
+            <span class="gift-box gift-one"><span class="gift-lid"></span><span class="gift-ribbon"></span><span class="gift-bow">♡</span></span>
+            <span class="gift-label">a little note</span><span class="gift-number">01</span>
+          </button>
+          <button type="button" class="gift-choice" data-gift="museum-screen" aria-label="Open gift two, Museum of Us">
+            <span class="gift-box gift-two"><span class="gift-lid"></span><span class="gift-ribbon"></span><span class="gift-bow">✿</span></span>
+            <span class="gift-label">our memories</span><span class="gift-number">02</span>
+          </button>
+          <button type="button" class="gift-choice" data-gift="calendar-screen" aria-label="Open gift three, birthday calendar">
+            <span class="gift-box gift-three"><span class="gift-lid"></span><span class="gift-ribbon"></span><span class="gift-bow">✦</span></span>
+            <span class="gift-label">your day</span><span class="gift-number">03</span>
+          </button>
+        </div>
+        <p class="gift-footnote">psst... you can open all three ♡</p>
+        <button type="button" class="button button-primary ending-link" data-next="ending-screen">one last little surprise <span>♡</span></button>
+        <br>
+        <button type="button" class="text-back" data-back="birthday-screen">← back to the party</button>
+      </div>
+    </section>
+
+    <section class="screen" id="letter-screen" aria-labelledby="letter-title" hidden>
+      <div class="gift-page">
+        <button type="button" class="text-back page-back" data-back="gifts-screen">← all the gifts</button>
+        <p class="eyebrow">GIFT ONE · OPEN WITH LOVE</p>
+        <h2 id="letter-title">A little note for you</h2>
+        <div class="letter-layout">
+          <div class="envelope-wrap">
+            <button type="button" class="envelope" id="envelope-button" aria-label="Open your birthday letter">
+              <span class="envelope-flap"></span><span class="envelope-paper">A note<br>for you</span>
+              <span class="wax-seal">♥</span>
+            </button>
+            <p class="envelope-hint" id="envelope-hint">tap the little heart to open</p>
+          </div>
+          <article class="love-letter" id="love-letter" hidden>
+            <h3 id="letter-greeting">To my favorite human,</h3>
+            <p>Happy birthday to the person who makes ordinary days feel like the best ones. I hope this year brings you the same warmth, laughter, and kindness you give to everyone around you.</p>
+            <p>Thank you for being you. I’m so lucky to have all these little moments with you—and I can’t wait for all the ones still to come.</p>
+            <p class="letter-signoff">All my love, always <span>♡</span></p>
+          </article>
+          <figure class="photo-frame letter-photo">
+            <img src="images/couple3.jpg" alt="A romantic photo of the two of us">
+            <span class="photo-fallback" aria-hidden="true">♡</span>
+            <figcaption>us, always</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="museum-screen" aria-labelledby="museum-title" hidden>
+      <div class="gift-page museum-page">
+        <button type="button" class="text-back page-back" data-back="gifts-screen">← all the gifts</button>
+        <p class="eyebrow">GIFT TWO · OUR FAVORITE PLACE</p>
+        <h2 id="museum-title">Museum of <span>US</span></h2>
+        <p class="muted">A tiny gallery of some very favorite moments.</p>
+        <div class="polaroid-gallery">
+          <figure class="polaroid polaroid-a"><img src="images/memory1.jpg" alt="A favorite memory together"><span class="photo-fallback" aria-hidden="true">♡</span><figcaption>the beginning ✿</figcaption></figure>
+          <figure class="polaroid polaroid-b"><img src="images/memory2.jpg" alt="A fun day out together"><span class="photo-fallback" aria-hidden="true">☼</span><figcaption>our happy place</figcaption></figure>
+          <figure class="polaroid polaroid-c"><img src="images/memory3.jpg" alt="A silly moment together"><span class="photo-fallback" aria-hidden="true">☺</span><figcaption>laughing, always</figcaption></figure>
+          <figure class="polaroid polaroid-d"><img src="images/memory4.jpg" alt="A sweet moment together"><span class="photo-fallback" aria-hidden="true">♡</span><figcaption>just us two</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="calendar-screen" aria-labelledby="calendar-title" hidden>
+      <div class="gift-page calendar-page">
+        <button type="button" class="text-back page-back" data-back="gifts-screen">← all the gifts</button>
+        <p class="eyebrow">GIFT THREE · THE MOST IMPORTANT DATE</p>
+        <h2 id="calendar-title">A date worth celebrating</h2>
+        <div class="calendar-card">
+          <div class="calendar-rings"><i></i><i></i><i></i><i></i></div>
+          <div class="calendar-header">TODAY, TOMORROW & EVERY DAY</div>
+          <div class="calendar-month">your special day</div>
+          <div class="calendar-date"><span>♡</span><strong>YOU</strong><span>♡</span></div>
+          <p class="calendar-message">It's your dayyy!</p>
+          <div class="calendar-doodles"><span>🫶</span><span>💛</span><span>🫰</span></div>
+          <div class="calendar-photos">
+            <figure class="photo-frame"><img src="images/calendar1.jpg" alt="A birthday photo of us"><span class="photo-fallback" aria-hidden="true">♡</span></figure>
+            <figure class="photo-frame"><img src="images/calendar2.jpg" alt="Another favorite photo of us"><span class="photo-fallback" aria-hidden="true">✿</span></figure>
+          </div>
+          <p class="calendar-footer">the world got luckier the day you arrived ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="ending-screen" aria-labelledby="ending-title" hidden>
+      <div class="ending-card soft-card">
+        <p class="eyebrow">A LITTLE SOMETHING FROM US</p>
+        <h2 id="ending-title">All our love, just for you</h2>
+        <p class="muted">Bubu and Dudu have one last gift to share.</p>
+        <div class="ending-bears" role="img" aria-label="Bubu and Dudu giving you a heart">
+          <span class="ending-bear ending-bubu">
+            <span class="bear-ear bear-ear-left"></span><span class="bear-ear bear-ear-right"></span>
+            <span class="bear-head"><span class="bear-eye bear-eye-left"></span><span class="bear-eye bear-eye-right"></span><span class="bear-muzzle"></span><span class="bear-blush bear-blush-left"></span><span class="bear-blush bear-blush-right"></span></span>
+            <span class="bear-body"><span class="bear-arm bear-arm-left"></span><span class="bear-arm bear-arm-right"></span><span class="bear-belly"></span></span>
+          </span>
+          <span class="gift-heart" aria-hidden="true">♥</span>
+          <span class="ending-bear ending-dudu">
+            <span class="bear-ear bear-ear-left"></span><span class="bear-ear bear-ear-right"></span>
+            <span class="bear-head"><span class="bear-eye bear-eye-left"></span><span class="bear-eye bear-eye-right"></span><span class="bear-muzzle"></span><span class="bear-blush bear-blush-left"></span><span class="bear-blush bear-blush-right"></span></span>
+            <span class="bear-body"><span class="bear-arm bear-arm-left"></span><span class="bear-arm bear-arm-right"></span><span class="bear-belly"></span></span>
+          </span>
+        </div>
+        <p class="ending-message">Happy birthday, Adi <span>♡</span></p>
+        <button type="button" class="text-back" data-back="gifts-screen">← back to your gifts</button>
+      </div>
+    </section>
+
+    <div class="no-modal" id="no-modal" role="dialog" aria-modal="true" aria-labelledby="no-title" hidden>
+      <div class="no-card soft-card">
+        <div class="bubu-dudu-scene" aria-hidden="true">
+          <span class="fight-spark fight-spark-one">✦</span>
+          <span class="fight-spark fight-spark-two">♡</span>
+          <span class="bubu bear-character" aria-label="Bubu, a white bear">
+            <span class="bear-ear bear-ear-left"></span><span class="bear-ear bear-ear-right"></span>
+            <span class="bear-head"><span class="bear-eye bear-eye-left"></span><span class="bear-eye bear-eye-right"></span><span class="bear-muzzle"></span><span class="bear-blush bear-blush-left"></span><span class="bear-blush bear-blush-right"></span></span>
+            <span class="bear-body"><span class="bear-arm bear-arm-left"></span><span class="bear-arm bear-arm-right"></span><span class="bear-belly"></span></span>
+            <span class="bubu-paw">♡</span>
+          </span>
+          <span class="dudu bear-character" aria-label="Dudu, a brown bear">
+            <span class="bear-ear bear-ear-left"></span><span class="bear-ear bear-ear-right"></span>
+            <span class="bear-head"><span class="bear-eye bear-eye-left"></span><span class="bear-eye bear-eye-right"></span><span class="bear-muzzle"></span><span class="bear-blush bear-blush-left"></span><span class="bear-blush bear-blush-right"></span></span>
+            <span class="bear-body"><span class="bear-arm bear-arm-left"></span><span class="bear-arm bear-arm-right"></span><span class="bear-belly"></span></span>
+            <span class="dudu-stars">✦ ✦</span>
+          </span>
+        </div>
+        <p class="eyebrow">EXCUSE ME?!</p>
+        <h2 id="no-title">How dare you click NO</h2>
+        <p class="muted">Bubu gave Dudu a tiny bonk. Now pick YES! ♡</p>
+        <button type="button" class="button button-primary" id="try-again">TRY AGAIN <span>♡</span></button>
+      </div>
+    </div>
+
+    <footer class="site-footer">a little pocket of birthday magic <span>♡</span></footer>
+  </main>
+</body>
+</html>
